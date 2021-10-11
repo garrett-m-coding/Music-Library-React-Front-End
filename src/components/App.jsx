@@ -1,10 +1,14 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import SongsTable from './SongsTable/SongsTable'
 
 class App extends Component {
-    state = {
-        songs: []
-    }
+    // constructor(props){
+    //     super(props);
+        state = {
+            songs: []
+        }
+    // }
 
     componentDidMount(){
         this.getAllSongs();
@@ -24,14 +28,25 @@ class App extends Component {
     }
 
     deleteSong = async (songId) => {
+        alert(`Hey, deleteSong for ${songId} was triggered!`)
 
+    }
+
+    createSong = async () => {
+        try{
+
+        }
+        catch (ex) {
+            console.log('Error in API call!');
+        }
     }
 
     render() { 
         return (
             <React.Fragment>
                 <h1>Async Await Axios testing</h1>
-                <button onClick={this.getAllSongs}>Get All Songs</button>
+                <button onClick={this.getAllSongs}>Refresh All Songs</button>
+                <SongsTable allSongs = {this.state.songs} />
             </React.Fragment>
           );
     }
