@@ -6,7 +6,7 @@ const SongsTable = (props) => {
     return (
         <table className='table'>
             <thead className='tr:nth-child'>
-                <td className='th'> Title </td>
+                <td className='th'> Song Title </td>
                 <td className='th'> Artist </td>
                 <td className='th'> Album </td>
                 <td className='th'> Release Date </td>
