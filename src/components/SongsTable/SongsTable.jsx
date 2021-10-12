@@ -4,24 +4,27 @@ import './SongsTable.css';
 const SongsTable = (props) => {
     console.log(props)
     return (
-        <table className='table'>
-            <thead className='tr:nth-child'>
-                <td className='th'> Song Title </td>
-                <td className='th'> Artist </td>
-                <td className='th'> Album </td>
-                <td className='th'> Release Date </td>
-                <td className='th'> Genre </td>
+        <table className='table-container'>
+            <thead>
+                <tr>
+                    <th> Song Title </th>
+                    <th> Artist </th>
+                    <th> Album </th>
+                    <th> Release Date </th>
+                    <th> Genre </th>
+                    <th> Delete Song </th>
+                </tr>
             </thead>
             <tbody>
-                {props.allSongs.map((song) => {
+                {props.songs.map((song) => {
                     return(
-                        <tr>
+                        <tr key={song.id}>
                             <td>{song.title}</td>
                             <td>{song.artist}</td>
                             <td>{song.album}</td>
                             <td>{song.release_date}</td>
                             <td>{song.genre}</td>
-                            <button onClick={props.deleteSong}> Delete Song</button>
+                            {/* <td><button onClick={this.deleteSong}>Delete</button></td> */}
                         </tr>
                     )
                 })}
@@ -31,27 +34,3 @@ const SongsTable = (props) => {
 }
 
 export default SongsTable;
-
-
-
-/* <h2>A basic HTML table</h2>
-
-<table style="width:100%">
-    <tr>
-        <th>Company</th>
-        <th>Contact</th>
-        <th>Country</th>
-    </tr>
-    <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
-    </tr>
-    <tr>
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
-    </tr>
-</table>
-
-<p>To undestand the example better, we have added borders to the table.</p> */
